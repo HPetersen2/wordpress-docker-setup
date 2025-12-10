@@ -1,0 +1,62 @@
+# -------------------------
+# Git
+# -------------------------
+.git
+.gitignore
+
+# -------------------------
+# Docker
+# -------------------------
+docker-compose.yml
+docker-compose.*.yml
+*.log
+*.pid
+
+# Lokale Daten und Volumes
+db_data/
+wordpress_data/
+tmp/
+logs/
+
+# -------------------------
+# Node / Frontend
+# -------------------------
+node_modules/
+npm-debug.log
+yarn-error.log
+dist/
+build/
+
+# -------------------------
+# PHP / Composer
+# -------------------------
+vendor/
+composer.lock
+composer.phar
+
+# -------------------------
+# WordPress
+# -------------------------
+wp-content/uploads/
+wp-content/cache/
+wp-content/backups/
+wp-content/upgrade/
+
+# Falls du Core nicht in Image kopieren willst:
+wp-admin/
+wp-includes/
+
+# -------------------------
+# Environment / Secrets
+# -------------------------
+.env
+
+# -------------------------
+# OS / Editor
+# -------------------------
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+.idea/
+.vscode/

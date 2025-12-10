@@ -1,0 +1,9 @@
+# env files
+.env
+
+# WordPress content created at runtime
+wordpress/
+db/
+
+# Logs
+*.log
