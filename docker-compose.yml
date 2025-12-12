@@ -1,9 +1,8 @@
 services:
   wordpress:
-    build: .
+    image: wordpress:latest
+    container_name: wordpress
     restart: always
-    ports:
-      - "8080:80"
     environment:
       WORDPRESS_DB_HOST: db
       WORDPRESS_DB_USER: ${WORDPRESS_DB_USER}
@@ -13,9 +12,12 @@ services:
       - db
     volumes:
       - wordpress:/var/www/html
+    expose:
+      - "80"
 
   db:
     image: mysql:8.0
+    container_name: mysql
     restart: always
     environment:
       MYSQL_DATABASE: ${WORDPRESS_DB_NAME}
@@ -27,6 +29,8 @@ services:
 
   nginx:
     image: nginx:latest
+    container_name: nginx
+    restart: always
     ports:
       - "80:80"
     volumes:
