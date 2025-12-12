@@ -1,10 +1,9 @@
-FROM wordpress:php8.2-apache
+FROM wordpress:latest
 
-RUN curl -o /usr/local/bin/wp https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar \
-    && chmod +x /usr/local/bin/wp
+COPY docker-entrypoint.sh /usr/local/bin/
 
-COPY docker-entrypoint-custom.sh /usr/local/bin/
-RUN chmod +x /usr/local/bin/docker-entrypoint-custom.sh
+RUN chmod +x /usr/local/bin/docker-entrypoint.sh
 
-ENTRYPOINT ["docker-entrypoint-custom.sh"]
+ENTRYPOINT ["docker-entrypoint.sh"]
+
 CMD ["apache2-foreground"]
