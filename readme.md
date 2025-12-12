@@ -62,11 +62,11 @@ Its purpose is to:
 3. Start the containers:
    - Foreground:
      ```bash
-     docker-compose up
+     docker compose up
      ```
    - Background (recommended on servers):
      ```bash
-     docker-compose up -d
+     docker compose up -d
      ```
 
 Access your WordPress instance in the browser and complete the installation wizard.
