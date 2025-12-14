@@ -4,7 +4,7 @@ services:
     container_name: wordpress
     restart: always
     environment:
-      WORDPRESS_DB_HOST: db
+      WORDPRESS_DB_HOST: db:3306
       WORDPRESS_DB_USER: ${WORDPRESS_DB_USER}
       WORDPRESS_DB_PASSWORD: ${WORDPRESS_DB_PASSWORD}
       WORDPRESS_DB_NAME: ${WORDPRESS_DB_NAME}
@@ -12,8 +12,8 @@ services:
       - db
     volumes:
       - wordpress:/var/www/html
-    expose:
-      - "80"
+    ports:
+      - "80:80"
     networks:
       - wpnet
 
@@ -25,25 +25,16 @@ services:
       MYSQL_DATABASE: ${WORDPRESS_DB_NAME}
       MYSQL_USER: ${WORDPRESS_DB_USER}
       MYSQL_PASSWORD: ${WORDPRESS_DB_PASSWORD}
-      MYSQL_RANDOM_ROOT_PASSWORD: '1'
+      MYSQL_RANDOM_ROOT_PASSWORD: "1"
     volumes:
       - db:/var/lib/mysql
     networks:
       - wpnet
 
-  nginx:
-    image: nginx:latest
-    container_name: nginx
-    restart: always
-    ports:
-      - "8080:81"
-    volumes:
-      - ./nginx.conf:/etc/nginx/nginx.conf
-    depends_on:
-      - wordpress
-    networks:
-      wpnet:
+networks:
+  wpnet:
 
 volumes:
   wordpress:
   db:
+
