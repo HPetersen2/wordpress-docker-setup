@@ -1,6 +1,6 @@
 services:
   wordpress:
-    image: wordpress:latest
+    image: wordpress:php8.2-apache
     container_name: wordpress
     restart: always
     environment:
