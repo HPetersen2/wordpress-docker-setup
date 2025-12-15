@@ -40,7 +40,7 @@ Its purpose is to:
 
 ## Quickstart
 
-### Prerequirements
+### Prerequisites
 
 - Docker installed  
   (Download: https://docs.docker.com/get-docker/)  
@@ -49,8 +49,8 @@ Its purpose is to:
 
 1. **Clone the repository**
    ```bash
-   git clone <repository-url>
-   cd <project-folder>
+   git clone https://github.com/HPetersen2/wordpress-docker-setup.git
+   cd wordpress-docker-setup
    ```
 
 2. Copy the environment file:
