@@ -1,9 +1,6 @@
 # WordPress Docker Setup
 
 A reusable Docker setup for deploying WordPress quickly and consistently. This repository allows you to spin up isolated WordPress environments for development, testing, or repeated project setups with minimal effort.
-
-## Description
-
 This repository provides a ready-to-use Docker configuration that installs WordPress together with a database.  
 Its purpose is to:
 
@@ -43,37 +40,12 @@ Its purpose is to:
 
 ## Quickstart
 
-### Requirements
+### Prerequirements
 
 - Docker installed  
   (Download: https://docs.docker.com/get-docker/)  
 - Docker Compose v2+  
 - A copy of the `.env` file
-
-### Start in 3 Steps
-
-1. Copy the environment file:
-   ```bash
-   cp .env.template .env
-   ```
-
-2. Fill in the required values inside `.env`.
-
-3. Start the containers:
-   - Foreground:
-     ```bash
-     docker compose up
-     ```
-   - Background (recommended on servers):
-     ```bash
-     docker compose up -d
-     ```
-
-Access your WordPress instance in the browser and complete the installation wizard.
-
----
-
-## Installation
 
 1. **Clone the repository**
    ```bash
@@ -81,25 +53,24 @@ Access your WordPress instance in the browser and complete the installation wiza
    cd <project-folder>
    ```
 
-2. **Prepare environment variables**
+2. Copy the environment file:
    ```bash
    cp .env.template .env
    ```
+
+3. Fill in the required values inside `.env`.
    Adjust values such as:
    - `WORDPRESS_DB_NAME`
    - `WORDPRESS_DB_USER`
    - `WORDPRESS_DB_PASSWORD`
    - `WORDPRESS_PORT`
 
-3. **Install Docker (if not installed)**  
-   https://docs.docker.com/get-docker/
+4. Start the container:
+     ```bash
+     docker compose up -d
+     ```
 
-4. **Start the containers**
-   ```bash
-   docker-compose up -d
-   ```
-
-5. **Open WordPress in your browser**
+Access your WordPress instance in the browser and complete the installation wizard.
 
 ---
 
